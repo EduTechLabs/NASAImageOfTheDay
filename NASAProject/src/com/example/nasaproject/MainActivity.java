@@ -4,13 +4,17 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
 
+	
 	private TextView title;
 	private TextView date;
 	private ImageView image;
@@ -23,12 +27,33 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
         initializeUI();
+        
+        initilizeOnClickListener();
         
         
     }
     
-    private void initializeUI(){
+    private void initilizeOnClickListener() {
+    	buttonRefresh.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(MainActivity.this, "Refresh Button Is Pressed ", Toast.LENGTH_LONG).show();
+			}
+		});
+    	buttonSetWallpaper.setOnClickListener(new  OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(MainActivity.this, "SetAsWallpaper Button Is Pressed ", Toast.LENGTH_LONG).show();
+			}
+		});
+    	
+	}
+
+	private void initializeUI(){
     	
     	title = (TextView) findViewById(R.id.imageTitle);
     	date = (TextView) findViewById(R.id.imageDate);
