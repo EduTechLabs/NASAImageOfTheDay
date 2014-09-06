@@ -37,17 +37,17 @@ public class MainActivity extends Activity {
     
     private void initilizeOnClickListener() {
     	buttonRefresh.setOnClickListener(new OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
 				Toast.makeText(MainActivity.this, "Refresh Button Is Pressed ", Toast.LENGTH_LONG).show();
+			
 			}
 		});
     	buttonSetWallpaper.setOnClickListener(new  OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
 				Toast.makeText(MainActivity.this, "SetAsWallpaper Button Is Pressed ", Toast.LENGTH_LONG).show();
+
 			}
 		});
     	

@@ -1,16 +1,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_linear_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.example.nasaproject.MainActivity" >
 
-      <ScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" >
@@ -23,58 +23,62 @@
             <TextView
                 android:id="@+id/imageTitle"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="@string/text_image_title" />
 
             <TextView
                 android:id="@+id/imageDate"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="@string/text_image_date" />
 
             <ImageView
                 android:id="@+id/imageDisplay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:contentDescription="@string/img_display_desc" />
+                android:contentDescription="@string/img_display_desc"
+                android:src="@drawable/nasa" />
 
             <TextView
                 android:id="@+id/imageDesc"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="@string/text_image_description" />
         </LinearLayout>
     </ScrollView>
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
         android:background="#ffdddddd"
         android:gravity="center"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal" >
 
         <Button
             android:id="@+id/button_refresh"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="match_parent"
-            android:text="@string/btn_refresh"
+            android:layout_marginBottom="5dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:background="#33B5E5"
             android:padding="5dp"
-            android:textColor="#FFF" 
-            android:background="#33B5E5"/>
+            android:text="@string/btn_refresh"
+            android:textColor="#FFF" />
 
         <Button
             android:id="@+id/button_setAsWallpaper"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="#33B5E5"
             android:padding="5dp"
             android:text="@string/btn_set_wallpaper"
-            android:textColor="#FFF" 
-            android:background="#33B5E5" />
+            android:textColor="#FFF" />
     </LinearLayout>
 
 </LinearLayout>
