@@ -2,6 +2,7 @@ package com.example.parser;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -13,6 +14,9 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 public class IotdHandler extends DefaultHandler {
 
@@ -41,4 +45,29 @@ public class IotdHandler extends DefaultHandler {
 			e.printStackTrace();
 		}
 	}
+	
+	private Bitmap getBitmap(){
+		HttpURLConnection connection;
+		InputStream input;
+		Bitmap bitmap;
+		try {
+			connection = (HttpURLConnection) new URL(url).openConnection();
+			connection.setDoInput(true);
+			connection.connect();
+			input = connection.getInputStream();
+			bitmap = BitmapFactory.decodeStream(input);
+			input.close();
+			return bitmap;
+			
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+			return null;
+		} catch (IOException e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
+	
+	
 }
