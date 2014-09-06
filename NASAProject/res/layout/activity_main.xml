@@ -53,6 +53,7 @@
         >
 
         <Button
+            android:id="@+id/button_refresh"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
@@ -65,7 +66,7 @@
             android:background="#33B5E5"/>
 
         <Button
-            
+            android:id="@+id/button_setAsWallpaper"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
