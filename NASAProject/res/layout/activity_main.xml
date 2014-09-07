@@ -15,7 +15,7 @@
         android:layout_height="0dp"
         android:layout_weight="1" >
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
@@ -24,28 +24,72 @@
                 android:id="@+id/imageTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/text_image_title" />
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:text="@string/text_image_title"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
                 android:id="@+id/imageDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/imageTitle"
+                android:gravity="center"
                 android:text="@string/text_image_date" />
 
             <ImageView
                 android:id="@+id/imageDisplay"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="8dp"
                 android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/imageDate"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/img_display_desc"
-                android:src="@drawable/nasa" />
+                android:scaleType="fitCenter"/>
 
             <TextView
                 android:id="@+id/imageDesc"
+				android:padding="8dp"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/text_image_description" />
-        </LinearLayout>
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/imageDisplay" />
+
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+
+            <ImageButton
+                android:id="@+id/imageButtonLeft"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/leftarrow" />
+
+            <ImageButton
+                android:id="@+id/imageButtonRight"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="#00000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/rightarrow" />
+        </RelativeLayout>
     </ScrollView>
 
     <LinearLayout
@@ -55,19 +99,6 @@
         android:background="#ffdddddd"
         android:gravity="center"
         android:orientation="horizontal" >
-
-        <Button
-            android:id="@+id/button_refresh"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_weight="1"
-            android:background="#33B5E5"
-            android:padding="5dp"
-            android:text="@string/btn_refresh"
-            android:textColor="#FFF" />
 
         <Button
             android:id="@+id/button_setAsWallpaper"
