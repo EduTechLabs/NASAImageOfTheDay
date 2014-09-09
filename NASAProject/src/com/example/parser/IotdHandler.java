@@ -168,13 +168,14 @@ public class IotdHandler extends DefaultHandler {
 	}
 
 	public void characters(char ch[],int start , int length){
-		
+		String chars = (new String(ch).substring(start, start + length));
 		if(inTitle){
 			feedItem.setTitle(new String(ch,start,length));
 			inTitle = false;
 		}
 		if(inDescription){
-			feedItem.setDescription(new String(ch,start,length));
+//			feedItem.setDescription(new String(ch,start,length));
+			feedItem.setDescription(chars);
 			inDescription = false;
 		}
 		if(inDate){
