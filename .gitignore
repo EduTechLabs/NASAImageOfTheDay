@@ -8,6 +8,7 @@
 # Java class files
 *.class
 .classpath
+.metadata/
 .project
 .settings/
 # Generated files
@@ -17,7 +18,7 @@ gen/
 # Gradle files
 .gradle/
 build/
-
+NASAProject/.metadata/
 # Local configuration file (sdk path, etc)
 local.properties
 
